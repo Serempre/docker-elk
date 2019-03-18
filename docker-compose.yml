@@ -17,6 +17,8 @@ services:
       ES_JAVA_OPTS: "-Xmx256m -Xms256m"
     networks:
       - elk
+    volumes:
+       - elk-data:/var/lib/elasticsearch
 
   logstash:
     restart: always
@@ -51,6 +53,9 @@ services:
       - elk
     depends_on:
       - elasticsearch
+
+volumes:
+  elk-data:
 
 networks:
 
