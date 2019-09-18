@@ -58,6 +58,5 @@ volumes:
   elk-data:
 
 networks:
-
   elk:
     driver: bridge
